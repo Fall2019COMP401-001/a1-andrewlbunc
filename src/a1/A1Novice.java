@@ -14,7 +14,7 @@ public class A1Novice {
 		 *  of each customer
 		 */
 		int customers = scan.nextInt();
-		for (int i = 0; i > customers; i++) {
+		for (int i = 0; i < customers; i++) {
 			// 3. Gather the first initial and last name of the customer
 			String firstName = scan.next();
 			char firstInitial = firstName.charAt(0);
@@ -25,6 +25,8 @@ public class A1Novice {
 			double cost = 0;
 			for (int j = 0; j < items; j++) {
 				int purchases = scan.nextInt();
+				// itemName is needed so that type mismatch does not occur
+				String itemName = scan.next();
 				double price = scan.nextDouble();
 				cost += (purchases * price);
 			}
