@@ -22,7 +22,7 @@ public class A1Novice {
 			// 4. Find out how many items they purchased
 			int items = scan.nextInt();
 			// 5. Add up the cost of all items purchased
-			double cost = 0;
+			double cost = 0.00;
 			for (int j = 0; j < items; j++) {
 				int purchases = scan.nextInt();
 				// itemName is needed so that type mismatch does not occur
@@ -31,7 +31,7 @@ public class A1Novice {
 				cost += (purchases * price);
 			}
 			// 6. Print out the "receipt" of the customer
-			System.out.println(firstInitial + ". " + lastName + ": " + cost);
+			System.out.println(firstInitial + ". " + lastName + ": " + String.format("%.2f",cost));
 		}
 		scan.close();
 	}
