@@ -31,7 +31,7 @@ public class A1Novice {
 				cost += (purchases * price);
 			}
 			// 6. Print out the "receipt" of the customer
-			System.out.print(firstInitial + ". " + lastName + ": " + cost);
+			System.out.println(firstInitial + ". " + lastName + ": " + cost);
 		}
 		scan.close();
 	}
