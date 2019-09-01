@@ -82,6 +82,7 @@ public class A1Jedi {
 		for (int i = 0; i < list.length; i++) {
 			if (name.equals(list[i])) {
 				buyers[i]++;
+				break;
 			}
 		}
 	}
