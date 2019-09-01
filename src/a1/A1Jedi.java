@@ -24,19 +24,25 @@ public class A1Jedi {
 					itemsList[i] = scan.next();
 					itemsPrice[i] = scan.nextDouble();
 				}
-				// *Find names of customers and how much they spend
+				// *Find names of customers and how much they buy
 				int customers = scan.nextInt();
 				int[] customersBought = new int[itemsInStock];
 				String[] customerNames = new String[customers];
 				for (int i = 0; i < customers; i++) {
 					customerNames[i] = scan.next() + " " + scan.next();
+					boolean[] customerBuys = new boolean[itemsInStock];
 					// *Determine how many of each object was purchased
 					int itemsBought = scan.nextInt();
+					//String theName = "";
+					//String[] theItems = new String[itemsBought];
 					for (int j = 0; j < itemsBought; j++) {
 						int itemAmount = scan.nextInt();
 						String itemName = scan.next();
 						purchase(itemsList, individualItems, itemAmount, itemName);
-						number(itemsList, itemName, customersBought);
+						// Program does not distinguish between 1 person buying
+						// multiple instances of 1 product and multiple people
+						// buying it
+						number(itemsList, itemName, customersBought, customerBuys);
 					}
 				}
 		scan.close();
@@ -78,11 +84,12 @@ public class A1Jedi {
 	 * Output: None, only to update the value of the number of customers that have
 	 * bought a stocked item
 	 */
-	static void number(String[] list, String name, int[] buyers) {
+	static void number(String[] list, String name, int[] buyers, boolean[] bool) {
 		for (int i = 0; i < list.length; i++) {
-			if (name.equals(list[i])) {
+			if (name.equals(list[i]) && !bool[i]) {
 				buyers[i]++;
-				break;
+				bool[i] = true;
+			} else {
 			}
 		}
 	}
